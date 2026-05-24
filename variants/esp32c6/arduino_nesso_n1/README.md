@@ -56,6 +56,6 @@ III's SHT30 temperature/humidity sensor also uses `0x44`, so both devices cannot
 share the same bus. This matches the limitation documented by Arduino for the
 Nesso N1 user manual.
 
-QMP6988 pressure readings are also not currently supported unless a QMP6988
-driver is added, so ENV III would still be incomplete even without the `0x44`
-address conflict.
+QMP6988 pressure readings are supported, but ENV III still remains incomplete on
+Nesso N1 because the SHT30 side cannot coexist on the same bus due to the
+`0x44` address conflict.
