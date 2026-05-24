@@ -120,7 +120,7 @@ typedef enum _meshtastic_TelemetrySensorType {
     meshtastic_TelemetrySensorType_MMC5983MA = 52,
     /* ICM-42607-P 6‑Axis IMU */
     meshtastic_TelemetrySensorType_ICM42607P = 53,
-    /* QST QMP6988 temperature and pressure sensor */
+    /* QMP6988 high accuracy pressure and temperature sensor */
     meshtastic_TelemetrySensorType_QMP6988 = 54
 } meshtastic_TelemetrySensorType;
 
