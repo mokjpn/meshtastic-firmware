@@ -97,7 +97,6 @@ class ScanI2C
         CW2015,
         SCD30,
         ADS1115,
-        SHTXX,
         QMP6988
     } DeviceType;
 
