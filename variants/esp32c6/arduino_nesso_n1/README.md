@@ -13,6 +13,21 @@ known limitations.
 - Environmental telemetry through the Grove/I2C port, for sensors already
   supported by Meshtastic
 
+## Known-good baseline
+
+For stable field testing, use the 2.7-based Nesso N1 branch state at:
+
+```text
+263e1c6f2da1a72f6a302e6a974896d1241b9978
+```
+
+That commit is based on firmware 2.7.23 and includes the verified Nesso N1
+support work, including display, touch input, CardKB, and QMP6988 telemetry.
+
+The current 2.8-based branch is useful for development and upstream follow-up,
+but should be treated as a revalidation target until the ESP32-C6 behavior is
+confirmed again on hardware.
+
 ## Build options
 
 The touchscreen can be disabled at build time:
