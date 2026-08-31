@@ -807,7 +807,7 @@ class LGFX : public lgfx::LGFX_Device
             cfg.rgb_order = false;                        // Set to true if the panel's red and blue are swapped
             cfg.dlen_16bit =
                 false;             // Set to true for panels that transmit data length in 16-bit units with 16-bit parallel or SPI
-#if defined(HAS_SDCARD)
+#if defined(HAS_SDCARD) || defined(ARDUINO_NESSO_N1)
             cfg.bus_shared = true; // If the bus is shared with the SD card, set to true (bus control with drawJpgFile etc.)
 #else
             cfg.bus_shared = false;

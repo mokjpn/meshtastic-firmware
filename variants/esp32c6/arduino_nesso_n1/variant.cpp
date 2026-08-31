@@ -99,6 +99,17 @@ void c6l_init()
     vTaskDelay(10 / portTICK_PERIOD_MS);
     i2c_write_byte(PI4IO_M_ADDR2, PI4IO_REG_OUT_SET, 0b11000110); // default output to 0
 
+    // The LCD reset line is PI4IO_M_ADDR2/P1.  The display can remain powered
+    // while the ESP32 is reset or reflashed, so release-only initialization is
+    // not sufficient; provide the ST7789 with a real reset pulse.
+    i2c_read_byte(PI4IO_M_ADDR2, PI4IO_REG_OUT_SET, &in_data);
+    clrbit(in_data, 1);
+    i2c_write_byte(PI4IO_M_ADDR2, PI4IO_REG_OUT_SET, in_data);
+    vTaskDelay(100 / portTICK_PERIOD_MS);
+    setbit(in_data, 1);
+    i2c_write_byte(PI4IO_M_ADDR2, PI4IO_REG_OUT_SET, in_data);
+    vTaskDelay(120 / portTICK_PERIOD_MS);
+
     // AW32001E - address 0x49
     // charge current 256mA (default 128mA)
     i2c_write_byte(0x49, 0x2, 0x1f);

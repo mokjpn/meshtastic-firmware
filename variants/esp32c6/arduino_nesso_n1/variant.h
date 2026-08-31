@@ -59,6 +59,7 @@ uint8_t gpio_ext_get(uint8_t address, uint8_t pin);
 #define SX126X_DIO3_TCXO_VOLTAGE 3.0
 
 #define USE_TFTDISPLAY 1
+#define HAS_SPI_TFT 1
 #define ST7789_DRIVER
 #define ST7789_CS 17
 #define ST7789_RS 16
@@ -68,7 +69,7 @@ uint8_t gpio_ext_get(uint8_t address, uint8_t pin);
 #define ST7789_MISO 22
 #define ST7789_BUSY -1
 #define ST7789_SPI_HOST SPI2_HOST
-#define SPI_FREQUENCY 60000000
+#define SPI_FREQUENCY 40000000
 #define SPI_READ_FREQUENCY 16000000
 #define TFT_HEIGHT 240
 #define TFT_WIDTH 135
